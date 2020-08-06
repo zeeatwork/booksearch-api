@@ -1,0 +1,69 @@
+.App {
+  text-align: center;
+}
+
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.container {
+  text-align: center;
+}
+.app-header {
+  background-color: #282c34;
+  font-size: 25px;
+  color: white;
+  padding: 35px;
+  font-weight: bold;
+}
+
+#search-bar {
+  background-color: #ABABAB;
+  padding: 10px;
+}
+
+#filter-bar {
+  background-color: #DEDEDE;
+  padding: 10px;
+}
+
+#subject-label {
+  margin-left: 15px;
+}
+
+.book-cover-container {
+  width: 250px;
+}
+
+.book-cover-container img {
+  width: 100%;
+  height: auto;
+}
+
+.book-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.book-description {
+  max-width: 800px;
+  padding: 30px;
+}
+
+.one-book-container {
+  margin-top: 30px;
+  padding: 30px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.red-bold{
+  color: red;
+  font-weight: bold;
+}

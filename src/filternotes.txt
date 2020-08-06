@@ -1,0 +1,5 @@
+1. create a state variable for the filter
+2. create a function which will update the state (mentioned in step 1) with the user choice
+3. provide the function (mentione din step 2) as a prop to the child element where you are taking users choice
+4. register the event on the form element, and call the parent function (mentioned in step 2) using the passed prop
+5. add filter to the book search url
