@@ -11,7 +11,8 @@ class FilterBar extends React.Component {
           <option value="magazines">Magazines</option>
         </select>
         <label id="subject-label" htmlFor="book-type">Filter:</label>
-        <select id="book-type" name="book-type">
+        <select id="book-type" name="book-type" onChange={this.props.handleBookTypeProp}>
+          <option value="all">All</option>
           <option value="partial">Partial</option>
           <option value="full">Full</option>
           <option value="free-ebooks">Free-ebooks</option>

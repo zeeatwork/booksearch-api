@@ -17,12 +17,13 @@ class App extends React.Component {
       searchTerm: '',
       bookData: [],
       printType: 'all',
+      bookType: 'all',
       bookNotFoundMessage: ''
     };
   }
 
   searchForBooks = () => {
-    fetch('https://www.googleapis.com/books/v1/volumes?q='+this.state.searchTerm+'+intitle:'+this.state.searchTerm+'&printType='+this.state.printType+'&key='+this.state.apiKey)
+    fetch('https://www.googleapis.com/books/v1/volumes?q='+this.state.searchTerm+'+intitle:'+this.state.searchTerm+'&printType='+this.state.printType+'&bookType='+this.state.bookType+'&key='+this.state.apiKey)
       .then(response => response.json())
       .then(data => {
         if (data.totalItems === 0) {
@@ -112,6 +113,12 @@ class App extends React.Component {
       printType: e.target.value
     });
   }
+
+  handleBookTypeChange = (e) => {
+    this.setState({
+      bookType: e.target.value
+    })
+  }
   
 
   //map over API Data
@@ -127,7 +134,7 @@ class App extends React.Component {
       <div className="container">
         <Header />
         <SearchBar searchTermProp={this.state.searchTerm} handleSearch={(e) => this.handleSearchChange(e) } handleClickProp={(e) => this.handleSearchClick(e)} />
-        <FilterBar handlePrintTypeProp={(e) => this.handlePrintTypeChange(e)} />
+        <FilterBar handlePrintTypeProp={(e) => this.handlePrintTypeChange(e)} handleBookTypeProp={(e) => this.handleBookTypeChange(e)} />
         <ResultsDisplay bookDataProp={this.state.bookData} />
 
         <h2 className="red-bold">{this.state.bookNotFoundMessage}</h2>
